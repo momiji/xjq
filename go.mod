@@ -3,8 +3,8 @@ module momiji.com/xjq
 go 1.20
 
 replace (
-	github.com/clbanning/mxj/v2 v2.5.7 => github.com/momiji/mxj/v2 v2.7.0-x1
-	github.com/itchyny/gojq v0.12.13 => github.com/momiji/gojq v0.12.13-x2
+	github.com/clbanning/mxj/v2 v2.5.7 => github.com/momiji/mxj/v2 v2.7.0-x2
+	github.com/itchyny/gojq v0.12.13 => github.com/momiji/gojq v0.12.13-x4
 //github.com/itchyny/gojq v0.12.13 => ../gojq
 )
 

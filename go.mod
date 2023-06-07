@@ -2,7 +2,7 @@ module momiji.com/xjq
 
 go 1.20
 
-replace github.com/itchyny/gojq v0.12.13 => github.com/momiji/gojq v0.12.13-x10
+replace github.com/itchyny/gojq v0.12.13 => github.com/momiji/gojq v0.12.13-x11
 
 require github.com/itchyny/gojq v0.12.13
 

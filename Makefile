@@ -2,7 +2,8 @@ BIN := xjq
 VERSION := $$(make -s show-version)
 VERSION_PATH := cli
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
-BUILD_LDFLAGS = "-s -w -X github.com/itchyny/gojq/cli.revision=x9-github.com/momiji/xjq@$(CURRENT_REVISION)"
+X_REV = $(shell cat go.mod | grep gojq | grep replace | grep -o "[a-Z0-9]*$$")
+BUILD_LDFLAGS = "-s -w -X github.com/itchyny/gojq/cli.revision=$(X_REV)-github.com/momiji/xjq@$(CURRENT_REVISION)"
 SHELL := /bin/bash
 
 .PHONY: all

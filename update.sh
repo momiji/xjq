@@ -26,6 +26,7 @@ error() {
 
 run() {
     echo -e "\e[34;1m$(expand-q "$@")\e[m"
+    "$@"
 }
 
 info() {
@@ -174,6 +175,9 @@ main() {
         fix xjq github.com/momiji/gojq gojq.fork
         make -B
         update xjq
+        info "xjq: install new version"
+        run sleep 5
+        run go install "github.com/momiji/xjq@$(git tag | sort -V | tail -1)"
         ;;
     esac
 }

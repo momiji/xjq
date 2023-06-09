@@ -15,7 +15,7 @@ func main() {
 	if bi, ok := debug.ReadBuildInfo(); ok {
 		for _, dep := range bi.Deps {
 			if dep.Path == "github.com/momiji/gojq" {
-				cliRevision = dep.Version + ":github.com/momiji/xjq@" + dep.Version
+				cliRevision = "github.com/momiji/xjq@" + dep.Version
 			}
 		}
 	}

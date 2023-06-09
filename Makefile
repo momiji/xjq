@@ -1,10 +1,5 @@
 BIN := xjq
-VERSION := $$(make -s show-version)
-VERSION_PATH := cli
-CURRENT_REVISION = $(shell git rev-parse --short HEAD)
-X_REV = $(shell cat go.mod | grep -o "github.com/momiji/gojq .*" | awk '{print $$2}')
-BUILD_LDFLAGS = "-s -w -X github.com/momiji/gojq/cli.revision=$(X_REV):github.com/momiji/xjq@$(CURRENT_REVISION)"
-SHELL := /bin/bash
+BUILD_LDFLAGS = "-s -w"
 
 .PHONY: all
 all: build

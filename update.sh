@@ -74,6 +74,7 @@ update() {
         info "$prj: create new tag $new"
         run git tag "$new"
         run git push --tags
+        ( mkdir t ; cd t ; go mod init x ; go get "github.com/momiji/$prj@$new" ; cd .. ; rm t -rf )
     fi
     popd >/dev/null
 }
@@ -171,8 +172,8 @@ main() {
     xjq)
         check xjq
         fix xjq github.com/momiji/gojq gojq.fork
-        update xjq
         make -B
+        update xjq
         ;;
     esac
 }

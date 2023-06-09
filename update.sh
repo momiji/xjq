@@ -74,7 +74,7 @@ update() {
         info "$prj: create new tag $new"
         run git tag "$new"
         run git push --tags
-        ( mkdir t ; cd t ; go mod init x ; go get "github.com/momiji/$prj@$new" ; cd .. ; rm t -rf )
+        #( mkdir t ; cd t ; go mod init x ; run go get "github.com/momiji/$prj@$new" ; cd .. ; rm t -rf )
     fi
     popd >/dev/null
 }

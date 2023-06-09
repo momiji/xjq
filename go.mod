@@ -1,4 +1,4 @@
-module github.com/momiji.com/xjq
+module github.com/momiji/xjq
 
 go 1.20
 

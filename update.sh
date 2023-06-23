@@ -8,13 +8,16 @@ filters[gojq]="-x[0-9]*$"
 filters[gojq.fork]="-r[0-9]*$"
 filters[xjq]="."
 
+CONTINUE=0
+
 # functions
 expand-q() {
     for i ; do
         if [[ "$i" =~ ^[-a-A0-9_.,:/*~^%+=¤]*$ ]] ; then
             echo -n "$i "
         else
-            echo -n "${i@Q} "
+            printf "%q " "$i"
+            #echo -n "${i@Q} "
         fi
     done
 }
@@ -25,8 +28,14 @@ error() {
 }
 
 run() {
-    echo -e "\e[34;1m$(expand-q "$@")\e[m"
-    "$@"
+    echo -e "\e[34;1m=> $(expand-q "$@")\e[m"
+    YES=
+    [ $CONTINUE = 0 ] && {
+        read -n 1 -p "Run command [Yes/No/Continue]? " YES
+        [ "${YES,}" = "c" ] && CONTINUE=1
+        echo
+    }
+    [ $CONTINUE = 1 ] || [ "${YES,}" = "y" ] && "$@"
 }
 
 info() {
@@ -56,6 +65,7 @@ update() {
     filter=${filters[$prj]}
     info "$prj: check if HEAD is a last tag"
     pushd "../$prj" >/dev/null
+    run git pull
     run git push
     last=$( git tag | sort -V | sed -n "/$filter/p" | tail -1 )
     a=$( git rev-parse HEAD )

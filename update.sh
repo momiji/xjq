@@ -185,11 +185,11 @@ main() {
         fix xjq github.com/momiji/gojq gojq.fork
         make -B
         update xjq
+        info "xjq: release new version"
+        GITHUB_TOKEN=$(gh auth token) run goreleaser release --clean
         info "xjq: install new version"
         run sleep 1
         run go install "github.com/momiji/xjq@$(git tag | sort -V | tail -1)"
-        info: "xjq: release new version"
-        GITHUB_TOKEN=$(gh auth token) run goreleaser release --clean
         ;;
     esac
 }

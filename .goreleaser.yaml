@@ -1,0 +1,55 @@
+# Make sure to check the documentation at https://goreleaser.com
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+    # binary: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
+    mod_timestamp: "{{ .CommitTimestamp }}"
+    # no_unique_dist_dir: true
+
+nfpms:
+  - id: linux_amd64
+    package_name: xjq
+
+    # Default: '{{ .PackageName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ with .Arm }}v{{ . }}{{ end }}{{ with .Mips }}_{{ . }}{{ end }}{{ if not (eq .Amd64 "v1") }}{{ .Amd64 }}{{ end }}'
+    # Templates: allowed
+    file_name_template: "{{ .ConventionalFileName }}"
+
+    # Your app's vendor.
+    vendor: Christian Bourgeois
+
+    # Your app's homepage.
+    homepage: https://github.com/momiji/xjq
+
+    # Your app's maintainer (probably you).
+    maintainer: Christian Bourgeois (github.com/momiji)
+
+    # Your app's description.
+    description: |-
+      xjq installer package.
+      Software to process JSON/YAML/XML files from command-line.
+      .
+      It combine jq (gojq), yq and xq in a single tool.
+
+    # Your app's license.
+    license: MIT
+
+    # Formats to be generated.
+    formats:
+      - apk
+      - deb
+      - rpm
+
+    umask: 0o002
+
+    # Path that the binaries should be installed.
+    # Default: '/usr/bin'
+    bindir: /usr/bin
+
+    # Version Release.
+    release: 1

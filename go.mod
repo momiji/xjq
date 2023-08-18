@@ -2,7 +2,7 @@ module github.com/momiji/xjq
 
 go 1.20
 
-require github.com/momiji/gojq v0.12.13-r17
+require github.com/momiji/gojq v0.12.13-r18
 
 require (
 	github.com/itchyny/timefmt-go v0.1.5 // indirect

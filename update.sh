@@ -78,10 +78,10 @@ update() {
         go mod tidy
         go mod verify
         go test ./...
-        pre=${last%.*}
+        pre=$( echo "$last" | sed "s/[0-9]*$//" )
         len=${#pre}
-        ver=${last:$((len+1))}
-        new=$pre.$((ver+1))
+        ver=${last:$len}
+        new=$pre$((ver+1))
         info "$prj: create new tag $new"
         run git tag "$new"
         run git push --tags

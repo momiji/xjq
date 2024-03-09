@@ -82,6 +82,7 @@ update() {
         len=${#pre}
         ver=${last:$len}
         new=$pre$((ver+1))
+        new=${2:-$new}
         info "$prj: create new tag $new"
         run git tag "$new"
         run git push --tags
@@ -177,7 +178,7 @@ main() {
     gojq)
         check gojq
         fix gojq github.com/momiji/xqml xqml
-        update gojq
+        update gojq "${2:-}"
         migrate gojq gojq.fork
         ;;
     xjq)
@@ -195,8 +196,8 @@ main() {
 
 if [ "${1:-}" = "" ]; then
     main xqml
-    main gojq
+    main gojq "${2:-}"
     main xjq
 else
-    main "$1"
+    main "$@"
 fi

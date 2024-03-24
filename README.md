@@ -32,13 +32,13 @@ New additions to original `gojq` are:
 
 On xqml project, main branch:
 
-- do any requird modifications if any issue is found
+- do any required modifications if any issue is found
 
 On gojq project, main branch:
 
-- fetch all changes from upstream: `git fetch upstream
-- merge all changes from upstream: `git merge upstream/main
-- once merge is done, run tests: `go test`
+- fetch all changes from upstream: `git fetch upstream`
+- merge all changes from upstream: `git merge upstream/main`
+- once merge is done, run tests: `go test ./...`
 - review all changes by comparing with upstream: should show only html/xml changes
 - finish merge by committing all changes
 - use `make` to build 
@@ -53,6 +53,6 @@ To test changes, update go.mod with new gojq version
 - perform any other tests
 
 To release
-- ./update.sh xqml
-- ./update.sh gojq [NEW_TAG] - use NEW_TAG only when gojq version has changed
-- ./update.sg xjq
+- `./update.sh xqml`
+- `./update.sh gojq [NEW_TAG]` - use NEW_TAG only when gojq version has changed
+- `./update.sg xjq`

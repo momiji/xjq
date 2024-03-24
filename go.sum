@@ -5,8 +5,8 @@ github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWE
 github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
 github.com/mattn/go-runewidth v0.0.15 h1:UNAjwbU9l54TA3KzvqLGxwWjHmMgBUVhBiTjelZgg3U=
 github.com/mattn/go-runewidth v0.0.15/go.mod h1:Jdepj2loyihRzMpdS35Xk/zdY8IAYHsh153qUoGf23w=
-github.com/momiji/gojq v0.12.14-r19 h1:+tr9GqqBbgcCGGhNBlM25jHi3o/Zz3gCqws8BO+7GO8=
-github.com/momiji/gojq v0.12.14-r19/go.mod h1:sut+Y1wMt1vJJ+adj7+O7KyNycJ79OaHBlMFcYtf+Yk=
+github.com/momiji/gojq v0.12.14-r20 h1:9rER63J8f6Dy5dgZOxkdyYl/aYHB6fvw1ga5VZIkmKY=
+github.com/momiji/gojq v0.12.14-r20/go.mod h1:sut+Y1wMt1vJJ+adj7+O7KyNycJ79OaHBlMFcYtf+Yk=
 github.com/momiji/xqml v0.0.9 h1:jEqjozVHqb4JlievVOHhXBjceF8nBmo8+VpyXc2n+/w=
 github.com/momiji/xqml v0.0.9/go.mod h1:IrROwWeq3LeqxsOtamTWx6L39irg7HJrH7GuDNolSv0=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=

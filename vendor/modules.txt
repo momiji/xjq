@@ -1,0 +1,25 @@
+# github.com/itchyny/timefmt-go v0.1.6
+## explicit; go 1.20
+github.com/itchyny/timefmt-go
+# github.com/mattn/go-isatty v0.0.20
+## explicit; go 1.15
+github.com/mattn/go-isatty
+# github.com/mattn/go-runewidth v0.0.16
+## explicit; go 1.9
+github.com/mattn/go-runewidth
+# github.com/momiji/gojq v0.12.16-r23
+## explicit; go 1.21
+github.com/momiji/gojq
+github.com/momiji/gojq/cli
+# github.com/momiji/xqml v0.0.9
+## explicit; go 1.18
+github.com/momiji/xqml
+# github.com/rivo/uniseg v0.4.7
+## explicit; go 1.18
+github.com/rivo/uniseg
+# golang.org/x/sys v0.26.0
+## explicit; go 1.18
+golang.org/x/sys/unix
+# gopkg.in/yaml.v3 v3.0.1
+## explicit
+gopkg.in/yaml.v3

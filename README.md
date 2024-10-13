@@ -5,7 +5,7 @@ This is a `gojq` replacement, adding yaml and xml support.
 Related projects:
 
 - [gojq](https://github.com/momiji/gojq) - gojq fork with xml/html support
-- [xqml](https://github.com/momiji/xqml) - xml library with xq ideas (from pip install yq): KeepNamespace, ForceList, FixRoot 
+- [xqml](https://github.com/momiji/xqml) - xml library with xq ideas (from pip install yq): KeepNamespace, ForceList, FixRoot
 
 ## Additions
 
@@ -30,9 +30,15 @@ New additions to original `gojq` are:
 
 ## Build a new release
 
+### xqml
+
 On xqml project, main branch:
 
 - do any required modifications if any issue is found
+
+To release a new version, use `./update.sh xqml` from xjq project (here).
+
+### gojq
 
 On gojq project, main branch:
 
@@ -41,18 +47,23 @@ On gojq project, main branch:
 - once merge is done, run tests: `go test ./...`
 - review all changes by comparing with upstream: should show only html/xml changes
 - finish merge by committing all changes
-- use `make` to build 
+- use `make` to build
 - perform any tests to check `./gojq` is working fine
-- push changes once everything is good
+- push changes once everything is good: `git push` and `git push --tags`
 
-On xjq project (here):
+To release a new version, use `./update.sh gojq [NEW_TAG]` from xjq project (here):
 
-To test changes, update go.mod with new gojq version
+- use NEW_TAG only when gojq version has changed
+- example of NEW_TAG: `v0.12.16-x23`
+- it allows to keep track of gojq version `v0.12.16` and my additions with `x23`
+
+### xjq
+
+On xjq project (here), main branch:
+
+- update go.mod with new gojq version
 - use `make` to build `./xjq`
 - check version with `./xjq --version`
 - perform any other tests
 
-To release
-- `./update.sh xqml`
-- `./update.sh gojq [NEW_TAG]` - use NEW_TAG only when gojq version has changed
-- `./update.sg xjq`
+To release a new version, use `./update.sh xjq` from xjq project (here).
